@@ -34,16 +34,16 @@ public class MortgageLoanController {
 	 * @throws InvalidInputException
 	 */
 	@PostMapping("/submit")
-	public ResponseEntity<?> submitApplication(@RequestBody UserInputDto userInput) {
+	public ResponseEntity<Object> submitApplication(@RequestBody UserInputDto userInput) {
 		try {
 			List<MortgageOffer> mortgageOffers = mortgageLoanService.submitApplication(userInput);
 			if (mortgageOffers.isEmpty()) {
-				return new ResponseEntity<String>("Sorry no offer available for mentioned property", HttpStatus.OK);
+				return new ResponseEntity<>("Sorry no offer available for mentioned property", HttpStatus.OK);
 			} else {
-				return new ResponseEntity<List<MortgageOffer>>(mortgageOffers, HttpStatus.ACCEPTED);
+				return new ResponseEntity<>(mortgageOffers, HttpStatus.ACCEPTED);
 			}
 		} catch (InvalidInputException e) {
-			return new ResponseEntity<String>(e.getMessage(), HttpStatus.BAD_REQUEST);
+			return new ResponseEntity<>(e.getMessage(), HttpStatus.BAD_REQUEST);
 		}
 
 	}
