@@ -7,7 +7,6 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.hcl.mortgageloan.dto.UserInputDto;
@@ -20,7 +19,6 @@ import com.hcl.mortgageloan.service.MortgageLoanService;
  *
  */
 @RestController
-@RequestMapping("/application")
 public class MortgageLoanController {
 
 	@Autowired
@@ -33,7 +31,7 @@ public class MortgageLoanController {
 	 * @return List of mortgage offers
 	 * @throws InvalidInputException
 	 */
-	@PostMapping("/submit")
+	@PostMapping("/request")
 	public ResponseEntity<Object> submitApplication(@RequestBody UserInputDto userInput) {
 		try {
 			List<MortgageOffer> mortgageOffers = mortgageLoanService.submitApplication(userInput);
