@@ -1,10 +1,16 @@
 package com.hcl.mortgageloan.entity;
 
+import java.time.LocalDate;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
+/**
+ * @author Administrator
+ *
+ */
 @Entity
 public class UserInformation {
 
@@ -16,7 +22,7 @@ public class UserInformation {
 
 	private String phoneNumber;
 
-	private String dob;
+	private LocalDate dob;
 
 	private String emailId;
 
@@ -58,11 +64,11 @@ public class UserInformation {
 		this.phoneNumber = phoneNumber;
 	}
 
-	public String getDob() {
+	public LocalDate getDob() {
 		return dob;
 	}
 
-	public void setDob(String dob) {
+	public void setDob(LocalDate dob) {
 		this.dob = dob;
 	}
 

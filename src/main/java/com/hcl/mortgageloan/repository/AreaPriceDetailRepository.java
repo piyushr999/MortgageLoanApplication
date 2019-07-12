@@ -5,7 +5,12 @@ import org.springframework.stereotype.Repository;
 
 import com.hcl.mortgageloan.entity.AreaPriceDetail;
 
+/**
+ * @author Administrator
+ *
+ */
 @Repository
-public interface AreaPriceDetailRepository extends JpaRepository<AreaPriceDetail, Long>{
-
+public interface AreaPriceDetailRepository extends JpaRepository<AreaPriceDetail, Long> {
+	
+	AreaPriceDetail findByPinCode(String pinCode);
 }
