@@ -1,18 +1,14 @@
 package com.hcl.mortgageloan.dto;
 
-import java.time.LocalDate;
+import java.util.Date;
 
-/**
- * @author Administrator
- *
- */
 public class UserInputDto {
 
 	private String applicantName;
 
 	private String contactNumber;
 
-	private LocalDate dateOfBirth;
+	private Date dateOfBirth;
 
 	private String email;
 
@@ -46,11 +42,11 @@ public class UserInputDto {
 		this.contactNumber = contactNumber;
 	}
 
-	public LocalDate getDateOfBirth() {
+	public Date getDateOfBirth() {
 		return dateOfBirth;
 	}
 
-	public void setDateOfBirth(LocalDate dateOfBirth) {
+	public void setDateOfBirth(Date dateOfBirth) {
 		this.dateOfBirth = dateOfBirth;
 	}
 
