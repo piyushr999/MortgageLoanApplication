@@ -37,6 +37,7 @@ public class MortgageLoanControllerTest {
 
 	@Test
 	public void testSubmitRequestWithEmpltyList() throws InvalidInputException {
+		
 		Mockito.when(mortgageLoanService.submitApplication(userInput)).thenReturn(Collections.emptyList());
 		assertNotNull(mortgageLoanController.submitApplication(userInput));
 	}
@@ -46,6 +47,12 @@ public class MortgageLoanControllerTest {
 		List<MortgageOffer> mortgageOffers = new ArrayList<>();
 		mortgageOffers.add(new MortgageOffer());
 		Mockito.when(mortgageLoanService.submitApplication(userInput)).thenReturn(mortgageOffers);
+		assertNotNull(mortgageLoanController.submitApplication(userInput));
+	}
+
+	@Test
+	public void testSubmitRequestWithInvalidInputException() throws InvalidInputException {
+		Mockito.when(mortgageLoanService.submitApplication(userInput)).thenThrow(new InvalidInputException(""));
 		assertNotNull(mortgageLoanController.submitApplication(userInput));
 	}
 

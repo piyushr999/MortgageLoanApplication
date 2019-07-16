@@ -5,7 +5,6 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.RequestBody;
 
 import com.hcl.mortgageloan.dto.UserInputDto;
 import com.hcl.mortgageloan.entity.AreaPriceDetail;
@@ -43,7 +42,7 @@ public class MortgageLoanService {
 	 * @return Eligible offers
 	 * @throws InvalidInputException
 	 */
-	public List<MortgageOffer> submitApplication(@RequestBody UserInputDto userInput) throws InvalidInputException {
+	public List<MortgageOffer> submitApplication( UserInputDto userInput) throws InvalidInputException {
 
 		AreaPriceDetail areaPriceDetail = areaPriceDetailRepository.findByPinCode(userInput.getPropertyPinCode());
 		if (null == areaPriceDetail) {
